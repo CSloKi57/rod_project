@@ -1,0 +1,654 @@
+/* GÉNÉRAUX */
+
+@font-face{
+	font-family:"Montserrat-Light";
+	src:url("fonts/Montserrat/Montserrat-Light.ttf");
+}
+@font-face{
+	font-family:"Montserrat-Bold";
+	src:url("fonts/Montserrat/Montserrat-Bold.ttf");
+}
+@font-face{
+	font-family:"Montserrat-SemiBold";
+	src:url("fonts/Montserrat/Montserrat-SemiBold.ttf");
+}
+@font-face{
+	font-family:"Montserrat-ExtraBold";
+	src:url("fonts/Montserrat/Montserrat-ExtraBold.ttf");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-principal: #291d82;
+    --main-second: #f7f7f7;
+    --main-cta: #5ae35a;
+    --main-light-text: #fbfffe;
+    --main-dark-text: #291d82;
+    --main-black: black;
+    --main-white: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    text-align: justify;
+    color: var(--main-dark-text);
+    font-family: 'Montserrat-Light';
+}
+
+h1 {
+    font-family: 'Montserrat-ExtraBold';
+}
+
+h2 {
+    font-family: 'Montserrat-Bold';
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-family: 'Montserrat-SemiBold';
+    margin-bottom: 1.5rem;
+}
+
+a {
+    color: var(--main-black);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+main>section {
+    padding: 3rem 0;
+}
+
+.dark * {
+    color: var(--main-light-text);
+}
+
+.cta_og {
+    width: max-content;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    font-family: 'Montserrat-Bold';
+    font-size: 1.2rem;
+    color: var(--main-light-text);
+    background-color: var(--main-cta);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* HEADER */
+
+#header {
+    height: 90vh;
+    width: 100%;
+    background-color: var(--main-principal);
+}
+
+#nav_principal:not(.load_nav) {
+    transition: all .3s;
+}
+
+.h_active #nav_principal {
+    background: rgba(255,255,255,.7) !important;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
+
+/* NAV */
+
+#nav_principal {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 1.5rem 1rem;
+    background-color: var(--main-second);
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 35px;
+    width: 190px;
+}
+
+.logo img {
+    object-fit: cover;
+}
+
+#first_list {
+    display: flex;
+}
+
+#first_list li a {
+    padding: .3rem 1rem;
+    border: 1px transparent
+}
+
+#first_list  #current_page {
+    padding: .3rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--main-principal);
+}
+
+#second_list {
+    margin-left: auto
+}
+
+#second_list li a {
+    padding: .6rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--main-principal);
+    background-color: var(--main-principal);
+}
+
+/* FIN NAV */
+
+/* DEBUT ASIDE BANNIERE */
+
+#aside_banniere {
+    position: absolute;
+    top: 55%;
+    left: 5%;
+    transform: translateY(-50%);
+    max-width: 90%;
+    padding: 1rem;
+    border-radius: 10px;
+    background: var(--main-second);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#aside_banniere>*:not(:last-child) {
+    max-width: 600px;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* FIN ASIDE BANNIERE */
+/* FIN  HEADER */
+/* DEBUT FOOTER */
+
+#footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* FIN FOOTER */
+/* FIN GÉNÉRAUX */
+
+/* DEBUT SERVICES CARD */
+
+#services {
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container_services {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.active_services .child_services {
+    top: 0;
+    opacity: 1;
+}
+
+.child_services {
+    position: relative;
+    top: 200px;
+    height: 20rem;
+    width: 30%;
+    min-width: 300px;
+    margin: 0 auto 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    opacity: 0;
+    background-color: var(--main-principal);
+}
+
+.first_part_services {
+    height: 50%;
+    width: 100%;
+}
+
+/* FIN SERVICES CARD */
+/* DEBUT CONTACT */
+
+#page_contact * {
+    cursor: url(picto/marteau.svg) 16.5 16.5, auto !important;
+}
+
+#page_contact *:hover {
+    cursor: url(picto/marteau.svg) 16.5 16.5, auto !important;
+}
+
+#page_contact.active * {
+    cursor: url(picto/marteau_rot.svg) 16.5 16.5, auto !important;
+}
+
+#page_contact.active *:hover {
+    cursor: url(picto/marteau_rot.svg) 16.5 16.5, auto !important;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form_contact {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.child_contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 0 2rem;
+}
+
+.child_contact label {
+    margin-bottom: 1rem;
+}
+
+.child_contact input, .child_contact textarea {
+    height: 3rem;
+    border-radius: 10px;
+    border: 1px solid var(--main-principal);
+    padding: 0 1rem;
+}
+
+body .child_contact textarea {
+    height: 10rem;
+    padding: 1rem;
+}
+
+#form_contact #envoyer {
+    margin: 2rem 0;
+    border: none;
+}
+
+#form_contact #envoyer:hover {
+    cursor: pointer;
+}
+
+/* FIN CONTACT */
+/* DEBUT CHIFFRES CLES */
+
+#chiffres_cles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-principal);
+}
+
+#chiffres_cles h2 {
+    color: var(--main-light-text);
+}
+
+#container_chiffres_cles {
+    width: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.child_chiffres_cles {
+    width: 30%;
+    min-width: 300px;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: var(--main-second);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.child_chiffres_cles strong {
+    margin-bottom: 1rem;
+    font-family: 'Montserrat-Bold';
+}
+
+.child_chiffres_cles span {
+    font-size: 2rem;
+}
+
+/* FIN CHIFFRES CLES */
+/* DEBUT OUVERTURE */
+
+#ouverture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container_ouverture {
+    width: 80%;
+}
+
+.child_ouverture {
+    height: max-content;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 2px solid var(--main-principal);
+    border-radius: 10px;
+    background-color: var(--main-second);
+    transition: all .3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.child_ouverture:hover {
+    cursor: pointer;
+}
+
+.child_ouverture h3 {
+    position: relative;
+    margin-bottom: 0;
+    padding-right: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.child_ouverture.active h3:after {
+    background-image: url('picto/arrow_close.svg');
+}
+
+.child_ouverture h3:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    background-image: url('picto/arrow_open.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.hidden_content_ouverture {
+    margin-top: 1.5rem;
+    transition: all .3s;
+    display: none;
+}
+
+.active .hidden_content_ouverture {
+    transition: all .3s;
+    display: flex;
+}
+
+/* FIN OUVERTURE */
+/* DEBUT TARIFS */
+
+#tarifs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tarifs article {
+    width: 100%;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tarifs .child_tarifs:nth-child(odd) table {
+    left: -200px;
+}
+
+#tarifs .child_tarifs:nth-child(even) table {
+    right: -200px;
+}
+
+#tarifs .child_tarifs:nth-child(odd) table.active_tarif {
+    left: 0;
+    opacity: 1;
+}
+
+#tarifs .child_tarifs:nth-child(even) table.active_tarif {
+    right: 0;
+    opacity: 1;
+}
+
+#tarifs table {
+    position: relative;
+    width: 80%;
+    opacity: 0;
+    transition: all 3s;
+}
+
+#tarifs *:not(table, h2, article) {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--main-principal);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#tarifs thead th, #tarifs tbody td {
+    width: auto;
+}
+
+#tarifs tbody th {
+    width: auto;
+    background-color: var(--main-second);
+}
+
+#tarifs thead tr th {
+    background-color: var(--main-cta);
+}
+
+/* FIN TARIFS */
+/* DEBUT REALISATIONS */
+
+#realisations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#realisations * {
+    transition: all 1s;
+}
+
+#window_real_slider {
+    height: 500px;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#container_realisations {
+    display: flex;
+}
+
+.realisation {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+}
+
+.realisation figure {
+    min-height: 100%;
+    width: 50%;
+}
+
+.realisation figure img {
+    object-fit: cover;
+}
+
+#nav_slider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav_slider span {
+    width: max-content;
+}
+
+#nav_slider span:hover {
+    cursor: pointer;
+}
+
+.nav_slider:after {
+    height: 30px;
+    width: 30px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+#nav_slider #nav_before:after {
+    content: '';
+    background-image: url(picto/arrow_next.svg);
+    rotate: 180deg;
+}
+
+#nav_slider #nav_after:after {
+    content: '';
+    background-image: url(picto/arrow_next.svg);
+}
+
+#cta_realisations {
+    margin-top: 3rem;
+}
+
+/* FIN REALISATIONS */
+/* DEBUT QUI SOMMES NOUS */
+
+#qui_sommes_nous {
+    position: relative;
+    top: -100px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 4rem 1rem 2rem;
+    border-radius: 10px;
+    border: 2px solid var(--main-principal);
+    background-color: var(--main-second);
+}
+
+.child_qsn {
+    margin-bottom: 4rem;
+}
+
+#qui_sommes_nous h2 {
+    text-align: center;
+}
+
+/* FIN QUI SOMMES NOUS */
+/* DEBUT SERVICES PAGES */
+
+#services_page {
+    position: relative;
+    top: -160px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#services_page * {
+    transition: all .3s;
+}
+
+#services_page h2 {
+    color: var(--main-light-text);
+    text-align: center;
+}
+
+#services_page nav {
+    height: 6rem;
+    width: max-content;
+    margin: 0 auto 4rem;
+    border: 3px solid var(--main-cta);
+    border-radius: 10px;
+    background-color: var(--main-second);
+    display: flex;
+}
+
+#services_page nav a {
+    height: 100%;
+    padding: 0 1rem 0;
+    font: 1.6rem/2rem 'Montserrat-Bold';
+    color: var(--main-dark-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#services_page nav a:not(:first-child) {
+    border-left: 3px solid var(--main-cta);
+}
+
+#services_page nav a:hover {
+    cursor: pointer;
+}
+
+#services_page aside {
+    padding-top: 5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body #services_page aside {
+    display: none;
+}
+
+body #services_page #electricite_service:target, body #services_page #plomberie_service:target, body #services_page #peinture_service:target {
+    display: flex;
+}
+
+.child_services_pages {
+    height: 20rem;
+    width: 30%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid var(--main-principal);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.child_services_pages figure {
+    height: 50%;
+    width: 100%;
+}
+
+/* FIN SERVICES PAGES */
