@@ -95,17 +95,17 @@ main>section {
     background-color: var(--main-principal);
 }
 
+/* NAV */
+
 #nav_principal:not(.load_nav) {
     transition: all .3s;
 }
 
-.h_active #nav_principal {
+.h_active #nav_principal:not(.active_menu) {
     background: rgba(255,255,255,.7) !important;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
 }
-
-/* NAV */
 
 #nav_principal {
     position: fixed;
@@ -113,6 +113,7 @@ main>section {
     z-index: 2;
     width: 100%;
     padding: 1.5rem 1rem;
+    transition: all .3s;
     background-color: var(--main-second);
     display: flex;
     align-items: center;
@@ -151,6 +152,61 @@ main>section {
     border-radius: 10px;
     border: 1px solid var(--main-principal);
     background-color: var(--main-principal);
+}
+
+#burger_menu {
+    display: none;
+}
+
+@media (max-width: 1140px) {
+    .active_menu #first_list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        opacity: 1;
+        transition: all .3s;
+        background-color: var(--main-second);
+        display: flex;
+        flex-direction: column;
+    }
+    body #first_list {
+        display: none;
+        opacity: 0;
+        transition: all .3s;
+    }
+    body #first_list li {
+        margin: 0 0 2rem;
+    }
+    body #burger_menu {
+        height: 28px;
+        width: 50px;
+        margin-left: 2rem;
+        min-width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #burger_menu span {
+        height: 3px;
+        width: 100%;
+        margin: auto;
+        background-color: var(--main-principal);
+        border-radius: 20px;
+        transition: all .3s;
+    }
+    .active_menu span:first-child {
+        -webkit-transform: translate(0px, 6px) rotate(45deg);
+        transform: translate(0px, 6px) rotate(45deg);
+    }
+    .active_menu span:nth-child(2) {
+        -webkit-transform: translate(0px, -7px) rotate(136deg);
+        transform: translate(0px, -7px) rotate(136deg);
+    }
+    .active_menu span:last-child {
+        display: none;
+    }
 }
 
 /* FIN NAV */
