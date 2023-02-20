@@ -649,18 +649,22 @@ body .child_contact textarea {
 }
 
 #services_page nav {
-    height: 6rem;
     width: max-content;
+    max-width: 100%;
     margin: 0 auto 4rem;
     border: 3px solid var(--main-cta);
     border-radius: 10px;
     background-color: var(--main-second);
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 #services_page nav a {
     height: 100%;
-    padding: 0 1rem 0;
+    min-width: 30%;
+    padding: 2rem 1rem;
     font: 1.6rem/2rem 'Montserrat-Bold';
     color: var(--main-dark-text);
     display: flex;
@@ -678,8 +682,9 @@ body .child_contact textarea {
 
 #services_page aside {
     padding-top: 5rem;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 body #services_page aside {
@@ -693,6 +698,8 @@ body #services_page #electricite_service:target, body #services_page #plomberie_
 .child_services_pages {
     height: 20rem;
     width: 30%;
+    min-width: 300px;
+    margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
     border: 2px solid var(--main-principal);
@@ -705,6 +712,20 @@ body #services_page #electricite_service:target, body #services_page #plomberie_
 .child_services_pages figure {
     height: 50%;
     width: 100%;
+}
+
+@media (max-width: 650px) {
+    body #services_page nav {
+        flex-direction: column;
+    }
+    body #services_page nav a {
+        width: 100%;
+        padding: 2rem 4rem;
+        border-left: none !important;
+    }
+    body #services_page nav a:not(:last-child) {
+        border-bottom: 3px solid var(--main-cta);
+    }
 }
 
 /* FIN SERVICES PAGES */
